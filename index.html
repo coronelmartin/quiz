@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Sistemas Operativos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón flotante para alternar modo oscuro -->
+    <button id="theme-toggle" onclick="toggleTheme()">🌙 Modo Oscuro</button>
+
+    <!-- Contenedor del Quiz Activo -->
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+            <!-- Barra de progreso visual -->
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill" class="progress-bar-fill"></div>
+            </div>
+            
+            <!-- Indicador de texto (ej. Pregunta 1 de 8) -->
+            <p id="progress-text"></p>
+            <h2 id="question">Cargando pregunta...</h2>
+            
+            <!-- Opciones de respuesta de selección múltiple -->
+            <div class="options-container">
+                <button class="option-btn" onclick="selectOption(0)"></button>
+                <button class="option-btn" onclick="selectOption(1)"></button>
+                <button class="option-btn" onclick="selectOption(2)"></button>
+                <button class="option-btn" onclick="selectOption(3)"></button>
+            </div>
+            
+            <!-- Caja dinámica para la corrección teórica y explicaciones -->
+            <div id="explanation-box" class="hidden"></div>
+            
+            <!-- Botón para avanzar a la siguiente pregunta -->
+            <button id="next-btn" class="hidden" onclick="nextQuestion()">Siguiente Pregunta</button>
+        </div>
+    </div>
+
+    <!-- Contenedor de Resultados (Oculto al inicio) -->
+    <div class="result-container hidden" id="result-box">
+        <h2>¡Quiz Terminado!</h2>
+        <p id="score-text"></p>
+        <button id="restart-btn" onclick="restartQuiz()">Reiniciar Juego</button>
+    </div>
+
+    <!-- Enlace al archivo de lógica JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
